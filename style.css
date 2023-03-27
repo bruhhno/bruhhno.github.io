@@ -1,0 +1,352 @@
+figure {
+    margin: 0px;
+
+}
+
+body main {
+    z-index: 2;
+    position: relative;
+    width: 100%;
+    margin: 0px;
+    margin-right: -20px;
+}
+
+body main text {
+    font-family: cursive;
+}
+
+body main figure span {
+    padding-top: 10px;
+    width: 20px;
+    float: right;
+    font-size: 10px;
+    position: relative;
+    z-index: 200;
+    padding-left: -20px;
+}
+
+img.cycle-next {
+    cursor: e-resize;
+
+}
+
+
+body {
+    background-color: white;
+    font-family: helvetica;
+    font-size: 11.4pt;
+    font-weight: 700;
+    display: flex;
+    margin-top: 4vh;
+    margin-left: 35px;
+    padding: 0px;
+}
+
+
+@media screen and (max-width: 500px) {
+    body {
+        background-color: white;
+        font-family: helvetica;
+        font-size: 13.4pt;
+        margin-left: 20px;
+        display: block;
+        margin-top: 3vh;
+        margin-right: 0px;
+        padding-right: 0px;
+        padding: 0px;
+    }
+}
+
+#menu {
+    position: absolute;
+    z-index: 200;
+    top: 4vh;
+    left: 3vw;
+    font-size: inherit;
+    overflow: visible;
+    display: block;
+    width: 22vw;
+    max-width: 22vw;
+    color: black;
+
+}
+
+
+@media screen and (max-width: 500px) {
+    #menu {
+        position: relative;
+        top: 0px;
+        left: 0px;
+        background-color: white;
+        font-size: inherit;
+        display: inherit;
+        width: 90vw;
+        max-width: 90vw;
+        margin-bottom: 10vw;
+        color: black;
+    }
+}
+
+.submenu {
+    font-size: inherit;
+    font-weight: 500;
+    line-height: 1.2em;
+    color: inherit;
+    padding-left: 0px;
+    padding-bottom: 5pt;
+    padding-top: 0pt;
+}
+
+.submenu p {
+    margin: 0pt;
+    padding-top: 5pt;
+}
+
+#backtotop {
+    position: fixed;
+    z-index: 200;
+    bottom: 2.5vh;
+    left: 3vw;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: inherit;
+}
+
+@media screen and (max-width: 500px) {
+    #backtotop {
+        font-size: inherit;
+    }
+}
+
+#logo:hover {
+    background-image: repeating-linear-gradient(45deg, violet, indigo, blue, green, yellow, orange, red, violet);
+    background-size: 800% 800%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbow 3s linear infinite;
+}
+
+
+#container2 {
+    align-content: center;
+    z-index: 2;
+    max-width: 750px;
+    margin-top: 0px;
+    margin-bottom: 100px;
+    padding-right: 15vw;
+    margin-left: 30vw;
+    padding-bottom: 50px;
+}
+
+@media screen and (max-width: 500px) {
+    #container2 {
+        display: block;
+        align-content: center;
+        background-color: white;
+        padding-left: none;
+        display: block;
+        width: 90vw;
+        margin-left: 0vw;
+        margin-right: 0vw;
+        padding-bottom: 50px;
+    }
+}
+
+#work {
+    display: block;
+
+}
+
+
+@media screen and (max-width: 500px) {
+    .work {
+        margin: 0px;
+        display: block;
+        filter: drop-shadow(10px 10px 11px #A1A1A1);
+    }
+}
+
+
+.slideshow-container {
+    height: auto;
+    width: auto;
+}
+
+#next {
+    cursor: e-resize;
+}
+
+next {
+    cursor: e-resize;
+    position: absolute;
+    top: 0;
+    background-color: coral;
+    height: 100px;
+    width: 100%;
+}
+
+.numbertext {
+    position: absolute;
+    right: 10%;
+    z-index: 10000;
+    color: black;
+    text-align: right;
+    font-size: 9px;
+    font-weight: 100;
+}
+
+
+
+img {
+    cursor: e-resize;
+    //filter: invert(100%);
+    padding-top: 0px;
+    padding-bottom: 0px;
+    width: 100%;
+    height: auto;
+    z-index: 00;
+    background-image: repeating-linear-gradient(45deg, #f8f8f8, #efefef, #fdfdfd, #dcdcdc, #f8f8f8, #efefef, #f8f8f8, #efefef, #fdfdfd, #dcdcdc, #f8f8f8, #efefef, #f8f8f8);
+    //background-image: repeating-linear-gradient(45deg, violet, indigo, blue, green, yellow, orange, red, violet);
+    background-size: 700% 700%;
+    animation: rainbow 15s linear infinite;
+    //filter: drop-shadow(15px 15px 10px lightgrey);
+    //background-image: url(img/backgrounds/wood.jpg);
+    //background-size: 100%;
+    //background-color: #f8f8f8;
+    //background-color: black;
+}
+
+@media screen and (max-width: 500px) {
+    img {
+        //filter: drop-shadow(9px 9px 6px lightgrey);
+    }
+}
+
+
+@keyframes mymove {
+    0% {
+        box-shadow: 15px 15px 10px lightgrey;
+    }
+}
+
+.project {
+    z-index: 1000;
+    padding-bottom: 35px;
+}
+
+
+.text {
+    position: relative;
+    padding-left: 20px;
+    padding-top: 10px;
+    z-index: 200;
+    text-align: center;
+    font-size: 12px;
+    padding-bottom: 95px;
+}
+
+@media screen and (max-width: 500px) {
+    .text {
+        padding-bottom: 25px;
+    }
+}
+
+.text3 {
+    display: flex;
+    position: relative;
+    text-align: center;
+    font-size: 12px;
+}
+
+@media (max-width: 500px) {
+  .hide {
+    display: none;
+    margin: 0;
+  }
+  .show {
+    display: inline-block;
+        margin: 0;
+  }
+}
+
+@media (min-width: 500px) {
+  .hide{
+    display: inline-block;
+
+  }
+  .show {
+    display: none;
+  }
+}
+
+a {
+    text-decoration: underline;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: underline;
+    background-image: repeating-linear-gradient(45deg, violet, indigo, blue, green, yellow, orange, red, violet);
+    background-size: 800% 800%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbow 3s linear infinite;
+}
+
+a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:vistes {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+label:hover {
+    cursor: pointer;
+    color: dimgrey;
+    text-decoration: underline;
+}
+
+[id^=toggle],
+[id^=toggle] + * {
+    display: none;
+}
+
+[id^=toggle]:checked + * {
+    display: block;
+}
+
+#rainbow {
+    text-decoration: inherit;
+}
+
+#rainbow:hover {
+    background-image: repeating-linear-gradient(45deg, violet, indigo, blue, green, yellow, orange, red, violet);
+    background-size: 800% 800%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbow 3s linear infinite;
+}
+
+#rainbow:checked {
+    background-image: repeating-linear-gradient(45deg, violet, indigo, blue, green, yellow, orange, red, violet);
+    background-size: 800% 800%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbow 3s linear infinite;
+}
+
+@keyframes rainbow {
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 0%
+    }
+
+    100% {
