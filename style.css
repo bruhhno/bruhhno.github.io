@@ -45,8 +45,7 @@ body main figure span {
 }
 
 img.cycle-next {
-    cursor: url('arrow.svg'), auto;
-
+    cursor: url('img/icons/arrow.svg'), auto;
 }
 
 
