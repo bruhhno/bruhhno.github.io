@@ -243,10 +243,7 @@ img {
     
 }
 #web2 {
-    background-image: url(img/backgrounds/web-2.jpg);
-    background-size: auto 100%;
-    background-position: center;
-    
+    background-color: black;    
 }
 #book {
     background-image: url(img/backgrounds/book.png);
@@ -269,6 +266,19 @@ img {
 }
 #cal {
     background-image: url(img/backgrounds/cal.jpg);
+    background-size: 100% auto;
+    background-position: center;
+    
+}
+
+#bal {
+    background-image: url(img/backgrounds/bal.jpg);
+    background-size: 100% auto;
+    background-position: center;
+    
+}
+#bal2 {
+    background-image: url(img/backgrounds/bal2.jpeg);
     background-size: 100% auto;
     background-position: center;
     
