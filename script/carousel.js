@@ -15,6 +15,11 @@ document.addEventListener('DOMContentLoaded', function() {
         showImage(nextIndex);
     }
 
+    function showPreviousImage() {
+        const previousIndex = (currentIndex - 1 + images.length) % images.length;
+        showImage(previousIndex);
+    }
+
     function startCarousel() {
         timer = setInterval(showNextImage, 6000); // Change image every 3 seconds
     }
@@ -23,7 +28,16 @@ document.addEventListener('DOMContentLoaded', function() {
         clearInterval(timer);
     }
 
+    function isToggleElement(element) {
+        return element.closest('#menu') !== null;
+    }
+
+    // Click event for the entire document
     document.body.addEventListener('click', function(event) {
+        if (isToggleElement(event.target)) {
+            return; // Do nothing if the click is on a toggle or its children
+        }
+
         const clickX = event.clientX;
         const middleX = window.innerWidth / 2;
         if (clickX < middleX) {
@@ -33,7 +47,12 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // Mouse move event for the carousel
     document.body.addEventListener('mousemove', function(event) {
+        if (isToggleElement(event.target)) {
+            return; // Do nothing if the mouse move is on a toggle or its children
+        }
+
         const mouseX = event.clientX;
         const middleX = window.innerWidth / 2;
         if (mouseX < middleX) {
@@ -58,11 +77,6 @@ document.addEventListener('DOMContentLoaded', function() {
             showPreviousImage();
         }
     });
-
-    function showPreviousImage() {
-        const previousIndex = (currentIndex - 1 + images.length) % images.length;
-        showImage(previousIndex);
-    }
 
     // Start the carousel
     startCarousel();
