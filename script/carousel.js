@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function startCarousel() {
-        timer = setInterval(showNextImage, 6000); // Change image every 3 seconds
+        timer = setInterval(showNextImage, 3000); // Change image every 3 seconds
     }
 
     function stopCarousel() {
