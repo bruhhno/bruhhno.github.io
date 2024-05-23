@@ -29,7 +29,16 @@ html {
     justify-content: center;
     align-items: center;
     font-family: GT America Medium;
+    font-size: 11pt;
     color: aliceblue;
+}
+
+@media only screen and (max-width: 600px) {
+
+    body,
+    html {
+        font-size: 9.7pt;
+    }
 }
 
 .heading {
