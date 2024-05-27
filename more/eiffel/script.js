@@ -53,13 +53,17 @@ function updateCompassHeading(bearing) {
 
 if ('DeviceOrientationEvent' in window) {
     window.addEventListener('deviceorientation', function(event) {
-        let heading = 0;
+        let heading = null;
         if (event.webkitCompassHeading !== undefined && event.webkitCompassHeading !== null) {
+            // For iOS devices supporting webkitCompassHeading
             heading = event.webkitCompassHeading;
         } else if (event.alpha !== null && event.alpha !== undefined) {
+            // For other devices
             heading = event.alpha;
         }
-        updateCompassHeading(heading);
+        if (heading !== null) {
+            updateCompassHeading(heading);
+        }
     });
 } else {
     console.error('Device orientation not supported');
