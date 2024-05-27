@@ -54,11 +54,9 @@ function updateCompassHeading(bearing) {
 if ('DeviceOrientationEvent' in window) {
     window.addEventListener('deviceorientation', function(event) {
         let heading = 0;
-        if (event.webkitCompassHeading !== undefined) {
-            // For iPhone 14 Pro or newer
+        if (event.webkitCompassHeading !== undefined && event.webkitCompassHeading !== null) {
             heading = event.webkitCompassHeading;
-        } else if (event.alpha !== null) {
-            // For older devices or non-Safari browsers
+        } else if (event.alpha !== null && event.alpha !== undefined) {
             heading = event.alpha;
         }
         updateCompassHeading(heading);
