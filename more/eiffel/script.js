@@ -1,77 +1,52 @@
-const eiffelTowerCoords = { lat: 48.8584, lng: 2.2945 };
-
-function toRadians(degrees) {
-    return degrees * (Math.PI / 180);
-}
-
-function toDegrees(radians) {
-    return radians * (180 / Math.PI);
-}
-
-function calculateDistanceAndBearing(lat1, lon1, lat2, lon2) {
-    const dLat = toRadians(lat2 - lat1);
-    const dLon = toRadians(lon2 - lon1);
-
-    const y = Math.sin(dLon) * Math.cos(toRadians(lat2));
-    const x = Math.cos(toRadians(lat1)) * Math.sin(toRadians(lat2)) -
-              Math.sin(toRadians(lat1)) * Math.cos(toRadians(lat2)) * Math.cos(dLon);
-    const bearing = (toDegrees(Math.atan2(y, x)) + 360) % 360;
-
-    const R = 6371; // Radius of the Earth in km
-    const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-              Math.cos(toRadians(lat1)) * Math.cos(toRadians(lat2)) *
-              Math.sin(dLon / 2) * Math.sin(dLon / 2);
+function getDistance(lat1, lon1, lat2, lon2) {
+    const R = 6371; // Radius of the earth in km
+    const dLat = deg2rad(lat2 - lat1);
+    const dLon = deg2rad(lon2 - lon1);
+    const a =
+        Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+        Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) *
+        Math.sin(dLon / 2) * Math.sin(dLon / 2);
     const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    const distance = R * c;
-
-    return { distance, bearing };
+    const distance = R * c * 1000; // Distance in meters
+    return distance;
 }
 
-function updateInfo(position) {
-    const userCoords = { lat: position.coords.latitude, lng: position.coords.longitude };
-    const { distance, bearing } = calculateDistanceAndBearing(userCoords.lat, userCoords.lng, eiffelTowerCoords.lat, eiffelTowerCoords.lng);
-
-    document.getElementById('distance').textContent = `Distance: ${distance.toFixed(2)} km`;
-    document.getElementById('direction').textContent = `Direction: ${bearing.toFixed(2)}°`;
-
-    updateCompassHeading(bearing);
+function deg2rad(deg) {
+    return deg * (Math.PI / 180);
 }
 
-function handleError(error) {
-    console.error('Geolocation error:', error);
-    document.getElementById('distance').textContent = 'Unable to determine location';
-    document.getElementById('direction').textContent = 'Unable to determine direction';
+function updateDistanceAndCompass(position) {
+    const eiffelTowerLat = 48.8584;
+    const eiffelTowerLon = 2.2945;
+    const userLat = position.coords.latitude;
+    const userLon = position.coords.longitude;
+
+    const distance = getDistance(userLat, userLon, eiffelTowerLat, eiffelTowerLon);
+    document.getElementById('distance').innerText = `Distance to Eiffel Tower: ${distance.toFixed(2)} meters`;
+
+    const angle = Math.atan2(eiffelTowerLon - userLon, eiffelTowerLat - userLat) * (180 / Math.PI);
+    document.getElementById('compass').style.transform = `rotate(${angle}deg)`;
 }
 
-function updateCompassHeading(bearing) {
-    const compassImage = document.getElementById('compassImage');
-    compassImage.style.transform = `rotate(${-bearing}deg)`; // Invert rotation for correct orientation
+function showError(error) {
+    switch(error.code) {
+        case error.PERMISSION_DENIED:
+            alert("User denied the request for Geolocation.");
+            break;
+        case error.POSITION_UNAVAILABLE:
+            alert("Location information is unavailable.");
+            break;
+        case error.TIMEOUT:
+            alert("The request to get user location timed out.");
+            break;
+        case error.UNKNOWN_ERROR:
+            alert("An unknown error occurred.");
+            break;
+    }
 }
 
-if ('DeviceOrientationEvent' in window) {
-    window.addEventListener('deviceorientation', function(event) {
-        let heading = null;
-        if (event.webkitCompassHeading !== undefined && event.webkitCompassHeading !== null) {
-            // For iOS devices supporting webkitCompassHeading
-            heading = event.webkitCompassHeading;
-        } else if (event.alpha !== null && event.alpha !== undefined) {
-            // For other devices
-            heading = event.alpha;
-        }
-        if (heading !== null) {
-            updateCompassHeading(heading);
-        }
-    });
+if (navigator.geolocation) {
+    navigator.geolocation.watchPosition(updateDistanceAndCompass, showError);
 } else {
-    console.error('Device orientation not supported');
-}
-
-if ('geolocation' in navigator) {
-    navigator.geolocation.watchPosition(updateInfo, handleError, {
-        enableHighAccuracy: true,
-        maximumAge: 10000,
-        timeout: 5000
-    });
-} else {
-    handleError({ message: 'Geolocation not supported' });
+    alert("Geolocation is not supported by this browser.");
 }
