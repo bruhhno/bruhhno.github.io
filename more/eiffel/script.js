@@ -43,4 +43,36 @@ function updateInfo(position) {
 function handleError(error) {
     console.error('Geolocation error:', error);
     document.getElementById('distance').textContent = 'Unable to determine location';
-    document.getElementById(
+    document.getElementById('direction').textContent = 'Unable to determine direction';
+}
+
+function updateCompassHeading(bearing) {
+    const compassImage = document.getElementById('compassImage');
+    compassImage.style.transform = `rotate(${-bearing}deg)`; // Invert rotation for correct orientation
+}
+
+if ('DeviceOrientationEvent' in window) {
+    window.addEventListener('deviceorientation', function(event) {
+        let heading = 0;
+        if (event.webkitCompassHeading !== undefined) {
+            // For iPhone 14 Pro or newer
+            heading = event.webkitCompassHeading;
+        } else if (event.alpha !== null) {
+            // For older devices or non-Safari browsers
+            heading = event.alpha;
+        }
+        updateCompassHeading(heading);
+    });
+} else {
+    console.error('Device orientation not supported');
+}
+
+if ('geolocation' in navigator) {
+    navigator.geolocation.watchPosition(updateInfo, handleError, {
+        enableHighAccuracy: true,
+        maximumAge: 10000,
+        timeout: 5000
+    });
+} else {
+    handleError({ message: 'Geolocation not supported' });
+}
