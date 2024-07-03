@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yelp</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="../icon/favicon.svg">
+</head>
+<body>
+    <div class="menu">
+        <div class="left-menu">
+            <a href="../index.html"><img src="../icon/home.svg" class="menuicon"></a>
+        </div>
+        <div id="current-page-title" class="current-page-title"></div>
+        <div class="middle-menu">
+            <a id="antwerp" href="antwerp.html">Antwerp</a>
+            <a id="berlin" href="berlin.html">Berlin</a>
+            <a id="la" href="la.html">Los Angeles</a>
+            <a id="london" href="london.html">London</a>
+            <a id="ny" href="ny.html">New York</a>
+            <a id="paris" href="paris.html">Paris</a>
+            <a id="venice" href="venice.html">Venice</a>
+            <a id="vienna" href="vienna.html">Vienna</a>
+            <a id="zurich" href="zurich.html">Zurich</a>
+        </div>
+        <div class="right-menu">
+            Favorite: <img src="../icon/star.svg" class="menuicon">
+        </div>
+        <div class="mobile-menu-button" onclick="toggleMenu()">
+            <img src="../icon/menu.svg" class="mobile-menu-icon">
+        </div>
+    </div>
+    <div class="dropdown-menu" id="dropdown-menu">
+        <a href="antwerp.html">Antwerp</a>
+        <a href="berlin.html">Berlin</a>
+        <a href="la.html">Los Angeles</a>
+        <a href="london.html">London</a>
+        <a href="ny.html">New York</a>
+        <a href="paris.html">Paris</a>
+        <a href="venice.html">Venice</a>
+        <a href="vienna.html">Vienna</a>
+        <a href="zurich.html">Zurich</a>
+        <a href="#">Favorite: <img src="../icon/star.svg" class="menuicon"></a>
+    </div>
+  
+      <div class="text">
+
+        
+        <h2>Art</h2>
+        <br>
+            <p>  <a target="_blank" href="https://www.google.com/search?q=cinema+galleggiante">Cinema Galleggiante </a></p>
+            <p>  <a target="_blank" href="https://www.google.com/search?q=fondazione+prada+venice">Fondazione Prada&nbsp;</a></p>
+            <p>  <a target="_blank" href="https://www.google.com/search?q=peggy+guggenheim+venice">Peggy Guggenheim&nbsp;</a></p>
+            <p>  <a target="_blank" href="https://www.google.com/search?q=punta+della+dogana">Punta della Dogana - Pinault Collection&nbsp;</a></p>
+        <br><br>
+        <h2>Food</h2>
+        <br>
+            <p>  <a target="_blank" href="https://www.google.com/search?q=enoteca+schiavi+venzia">Enoteca Schiavi&nbsp;</a></p>
+            <p>  <a target="_blank" href="https://www.google.com/search?q=il+paradiso+perduto+venezia"><img src="../icon/star.svg" class="star">Il Paradiso Perduto&nbsp;</a></p>
+            <p>  <a target="_blank" href="https://www.google.com/search?q=la+palanca+venezia">La Palanca&nbsp;</a></p>
+            <p>  <a target="_blank" href="https://www.google.com/search?q=osteria+al+squero+venezia"><img src="../icon/star.svg" class="star">Osteria Al Squero&nbsp;</a></p>
+            <p>  <a target="_blank" href="https://www.google.com/search?q=pasticceria+tonolo+venezia">Pasticceria Tonolo&nbsp;</a></p>
+            <p>  <a target="_blank" href="https://www.google.com/search?q=puppa+bar+venezia">Puppa Bar Venezia&nbsp;</a></p>
+            <p>  <a target="_blank" href="https://www.google.com/search?q=taverna+scalinetto+venezia">Taverna Scalinetto&nbsp;</a></p>
+            <p>  <a target="_blank" href="https://www.google.com/search?q=trattoria+alla+rivetta"><img src="../icon/star.svg" class="star">Trattoria alla Rivetta&nbsp;</a></p>
+            <p>  <a target="_blank" href="https://www.google.com/search?q=vino+vero+venezia"><img src="../icon/star.svg" class="star">Vino Vero</a></p>
+        <br><br>
+        <h2><a target="_blank" href="https://www.google.com/search?q=lido+di+venezia">Lido di Venezia</a></h2>
+        <br>
+            <p>  <a target="_blank" href="https://www.google.com/search?q=alberoni+beach"><img src="../icon/star.svg" class="star">Alberoni Beach&nbsp;</a></p>
+            <p>  <a target="_blank" href="https://www.google.com/search?q=maleti+giorgio+bar+lido">Bar Maleti Giorgio (gelato)</a></p>
+            <p>  <a target="_blank" href="https://www.google.com/search?q=belvedere+lido+venezia">Belvedere (caf&eacute;)&nbsp;</a></p>
+            <p>  <a target="_blank" href="https://www.google.com/search?q=chiosco+bahiano+lido+venezia"><img src="../icon/star.svg" class="star">Chiosco Bahiano&nbsp;</a></p>
+            <p>  <a target="_blank" href="https://www.google.com/search?q=coco+beach+lido+venezia">Coco Beach&nbsp;</a></p>
+        <br><br>
+    
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById('dropdown-menu');
+            if (menu.style.display === 'flex') {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'flex';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var path = window.location.pathname;
+            var page = path.split("/").pop();
+
+            var menuItems = {
+                'antwerp.html': 'antwerp',
+                'berlin.html': 'berlin',
+                'la.html': 'la',
+                'london.html': 'london',
+                'ny.html': 'ny',
+                'paris.html': 'paris',
+                'venice.html': 'venice',
+                'vienna.html': 'vienna',
+                'zurich.html': 'zurich'
+            };
+
+            var activeMenuItemId = menuItems[page];
+            if (activeMenuItemId) {
+                var activeMenuItem = document.getElementById(activeMenuItemId);
+                if (activeMenuItem) {
+                    activeMenuItem.classList.add('active');
+                    document.getElementById('current-page-title').textContent = activeMenuItem.textContent;
+                }
+            }
+        });
+    </script>
+    <script src="../script/time.js" defer></script>
+</body>
+</html>
