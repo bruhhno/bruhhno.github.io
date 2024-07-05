@@ -1,0 +1,240 @@
+/* Fonts */
+@font-face {
+    font-family: 'Marista-Italic';
+    src: url('font/Marista-Italic.eot');
+    src: url('font/Marista-Italic.eot?#iefix') format('embedded-opentype'),
+         url('font/Marista-Italic.woff') format('woff'),
+         url('font/Marista-Italic.ttf') format('truetype'),
+         url('font/Marista-Italic.svg#svgFontName') format('svg');
+}
+
+/* Body and General Styles */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 10pt;
+    background-color: lightgrey;
+    margin: 0;
+    padding: 0;
+}
+
+/* Landing Page Styles */
+.landingpage {
+    height: 100vh; 
+    margin-top: 33vh;
+    text-align: center;
+    font-family: 'Marista-Italic';
+    font-size: 28pt;
+    font-weight: bold;
+    line-height: 28pt;
+    justify-content: center;
+    align-items: center; 
+}
+
+/* Menu Styles */
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    color: black;
+    padding: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.menu a {
+    text-decoration: none;
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+.menu a:hover {
+    text-decoration: none;
+    font-weight: 900;
+    filter: drop-shadow(0px 0px 15px white);
+}
+
+.middle-menu,
+.right-menu {
+    display: flex;
+}
+
+.mobile-menu-button {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.mobile-menu-icon {
+    width: 24px; 
+    height: auto; 
+    cursor: pointer; 
+}
+
+.dropdown-menu {
+    display: none;
+    flex-direction: column;
+    background-color: whitesmoke;
+    color: black;
+    width: 100%;
+}
+
+.dropdown-menu a {
+    padding: 10px 20px;
+    border-top: 1px solid lightgrey;
+}
+
+.dropdown-menu a:first-child {
+    border-top: none;
+}
+
+@media (max-width: 768px) {
+    .middle-menu,
+    .right-menu {
+        display: none;
+    }
+
+    .mobile-menu-button {
+        display: block;
+    }
+
+    .dropdown-menu {
+        display: none;
+    }
+}
+
+/* Other Styles */
+.time {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+
+.menuicon {
+    height: 13pt;
+    width: 15pt;
+    padding-right: 1px;
+    padding-left: 1.5px;
+}
+
+@media screen and (max-width: 600px) {
+    .menuicon {
+        width: 24px;
+        height: auto;
+        padding-right: 2px;
+    }
+}
+
+.menu a.active {
+    font-weight: bold;
+}
+
+.current-page-title {
+    display: none;
+    text-align: center;
+    flex-grow: 1;
+}
+
+@media (max-width: 768px) {
+    .current-page-title {
+        display: block;
+    }
+
+    .middle-menu,
+    .right-menu {
+        display: none;
+    }
+}
+
+.text {
+    text-align: center;
+    font-family: 'Marista-Italic';
+    padding-left: 20%;
+    padding-right: 20%;
+    padding: 0;
+    color: black;
+    margin: 30px;
+}
+
+h1,
+h2 {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    color: black;
+}
+
+h1 {
+    font-size: 48pt;
+}
+
+h2 {
+    font-size: 28pt;
+    line-height: 28pt;
+    font-weight: bold;
+    border-radius: 4px;
+    padding: 2px;
+    margin: 7px;
+    font-weight: 900;
+    background-color: whitesmoke;
+}
+
+@media screen and (max-width: 600px) {
+    h2 {
+        font-size: 22px;
+        line-height: 22pt;
+    }
+}
+
+p {
+    display: inline-block;
+    overflow: visible;
+    line-height: 28pt;
+    font-weight: bold;
+    border-radius: 1px;
+    padding: 1px;
+    padding-left: 2px;
+    padding-right: 2px;
+    margin: 2px;
+    border-radius: 4px;
+    font-size: 28pt;
+    color: whitesmoke;
+    background-color: darkgrey;
+}
+
+@media screen and (max-width: 600px) {
+    p {
+        font-size: 22px;
+        line-height: 20pt;
+    }
+}
+
+.star {
+    height: 20pt;
+    width: 26pt;
+    padding-right: 3px;
+    padding-left: 2.5px;
+}
+
+@media screen and (max-width: 600px) {
+    .star {
+        height: 15pt;
+        width: 20pt;
+        padding-right: 2px;
+        padding-left: 1.5px;
+    }
+}
+
+/* Links */
+a,
+a:visited,
+a:active {
+    text-decoration: inherit;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: inherit;
+    filter: drop-shadow(0px 0px 15px black);
+}

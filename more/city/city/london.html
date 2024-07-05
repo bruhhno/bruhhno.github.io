@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yelp</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="../icon/favicon.svg">
+</head>
+<body>
+    <div class="menu">
+        <div class="left-menu">
+            <a href="../index.html"><img src="../icon/home.svg" class="menuicon"></a>
+        </div>
+        <div id="current-page-title" class="current-page-title"></div>
+        <div class="middle-menu">
+            <a id="antwerp" href="antwerp.html">Antwerp</a>
+            <a id="berlin" href="berlin.html">Berlin</a>
+            <a id="la" href="la.html">Los Angeles</a>
+            <a id="london" href="london.html">London</a>
+            <a id="ny" href="ny.html">New York</a>
+            <a id="paris" href="paris.html">Paris</a>
+            <a id="venice" href="venice.html">Venice</a>
+            <a id="vienna" href="vienna.html">Vienna</a>
+            <a id="zurich" href="zurich.html">Zurich</a>
+        </div>
+        <div class="right-menu">
+            Favorite: <img src="../icon/star.svg" class="menuicon">
+        </div>
+        <div class="mobile-menu-button" onclick="toggleMenu()">
+            <img src="../icon/menu.svg" class="mobile-menu-icon">
+        </div>
+    </div>
+    <div class="dropdown-menu" id="dropdown-menu">
+        <a href="antwerp.html">Antwerp</a>
+        <a href="berlin.html">Berlin</a>
+        <a href="la.html">Los Angeles</a>
+        <a href="london.html">London</a>
+        <a href="ny.html">New York</a>
+        <a href="paris.html">Paris</a>
+        <a href="venice.html">Venice</a>
+        <a href="vienna.html">Vienna</a>
+        <a href="zurich.html">Zurich</a>
+        <a href="#">Favorite: <img src="../icon/star.svg" class="menuicon"></a>
+    </div>
+  
+     <div class="text">
+        
+        <h2>Art</h2>
+        <br>
+        <p> Latest info on <a target="_blank" href="http://www.artrabbit.com">www.artrabbit.com</a></p>
+        <p>  <a target="_blank" href="https://www.google.com/search?q=barbican+center"> Barbican</a></p>
+        <p>  <a target="_blank" href="https://www.google.com/search?q=chisenhale+gallery"> Chisenhale Gallery</a></p>
+        <p>  <a target="_blank" href="https://www.google.com/search?q=hayward+gallery"> <img src="../icon/star.svg" class="star">Hayward Gallery</a></p>
+        <p>  <a target="_blank" href="https://www.google.com/search?q=saatchi+london"> Saatchi Gallery</a></p>
+        <p>  <a target="_blank" href="https://www.google.com/search?q=serpentine+london"> <img src="../icon/star.svg" class="star">Serpentine</a></p>
+        <p>  <a target="_blank" href="https://www.google.com/search?q=tate+london"> Tate + Tate Britain</a></p>
+        <p>  <a target="_blank" href="https://www.google.com/search?q=british+museum+london"> The British Museum&nbsp;</a></p>
+        <br><br>
+        <h2>Pubs/ Bars</h2>
+        <br>
+        <p>  <a target="_blank" href="https://www.google.com/search?q=dalston+superstore"> <img src="../icon/star.svg" class="star">Dalston Superstore</a></p>
+        <p>  <a target="_blank" href="https://www.google.com/search?q=ridley+rd+market+bar"> <img src="../icon/star.svg" class="star">Ridley Road Market Bar</a></p>
+        <p>  <a target="_blank" href="https://www.google.com/search?q=the+haggerston+pub"> The Haggerston</a></p>
+        <p>  <a target="_blank" href="https://www.google.com/search?q=the+lauristen+pub"> The Lauriston</a></p>
+        <p>  <a target="_blank" href="https://www.google.com/search?q=the+royal+oak+pub"> The Royal Oak</a></p>
+        <br><br>
+        <h2>Food</h2>
+        <br>
+        <p>  <a target="_blank" href="https://www.google.com/search?q=big+jo+london"> Big Jo</a></p>
+        <p>  <a target="_blank" href="https://www.google.com/search?q=e+pellicci+london"> <img src="../icon/star.svg" class="star">E Pellicci</a></p>
+        <p>  <a target="_blank" href="https://www.google.com/search?q=e5+bakehouse"> <img src="../icon/star.svg" class="star">E5 Bakehouse</a></p>
+        <p>  <a target="_blank" href="https://www.google.com/search?q=f+cooke+hoxton"> <img src="../icon/star.svg" class="star">F Cooke Hoxton</a></p>
+        <p>  <a target="_blank" href="https://www.google.com/search?q=franco+manca+london"> Franco Manca</a></p>
+        <p>  <a target="_blank" href="https://www.google.com/search?q=jolene+london"> <img src="../icon/star.svg" class="star">Jolene Bakery &amp; Restaurant</a></p>
+        <p>  <a target="_blank" href="https://www.google.com/search?q=lardo+london"> LARDO</a></p>
+        <p>  <a target="_blank" href="https://www.google.com/search?q=mess+cafe+hackney"> Mess Cafe</a></p>
+        <p>  <a target="_blank" href="https://www.google.com/search?q=miel+bakery"> Miel Bakery</a></p>
+        <p>  <a target="_blank" href="https://www.google.com/search?q=pophams+hackney"> Pophams Bakery - Hackney</a></p>
+        <p>  <a target="_blank" href="https://www.google.com/search?q=rasa+stoke+newington"> <img src="../icon/star.svg" class="star">Rasa South Indian</a></p>
+        <p>  <a target="_blank" href="https://www.google.com/search?q=regency+cafe+london"> <img src="../icon/star.svg" class="star">Regency Cafe</a></p>
+        <p>  <a target="_blank" href="https://www.google.com/search?q=bagel+house+hackney"> The Bagel House</a></p>
+        <p>  <a target="_blank" href="https://www.google.com/search?q=the+good+egg+stoke+newington"> <img src="../icon/star.svg" class="star">The Good Egg&nbsp;</a></p>
+        <p>  <a target="_blank" href="https://www.google.com/search?q=victory+mansion+london"> Victory Mansion</a></p>
+        <p>  <a target="_blank" href="https://www.google.com/search?q=westerns+laundry"> Westerns Laundry</a></p>
+        <br><br>
+        <h2>Other</h2>
+        <br>
+        <p>  <a target="_blank" href="https://www.google.com/search?q=donlon+books"> <img src="../icon/star.svg" class="star">Donlon Books</a></p>
+        <p>  <a target="_blank" href="https://www.google.com/search?q=london+fields+lido"> London Fields Lido</a></p>
+        <p>  <a target="_blank" href="https://www.google.com/search?q=castle+cinema+hackney"> <img src="../icon/star.svg" class="star">The Castle Cinema</a></p>
+        <br><br>
+
+    </div>
+    
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById('dropdown-menu');
+            if (menu.style.display === 'flex') {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'flex';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var path = window.location.pathname;
+            var page = path.split("/").pop();
+
+            var menuItems = {
+                'antwerp.html': 'antwerp',
+                'berlin.html': 'berlin',
+                'la.html': 'la',
+                'london.html': 'london',
+                'ny.html': 'ny',
+                'paris.html': 'paris',
+                'venice.html': 'venice',
+                'vienna.html': 'vienna',
+                'zurich.html': 'zurich'
+            };
+
+            var activeMenuItemId = menuItems[page];
+            if (activeMenuItemId) {
+                var activeMenuItem = document.getElementById(activeMenuItemId);
+                if (activeMenuItem) {
+                    activeMenuItem.classList.add('active');
+                    document.getElementById('current-page-title').textContent = activeMenuItem.textContent;
+                }
+            }
+        });
+    </script>
+    <script src="../script/time.js" defer></script>
+</body>
+</html>

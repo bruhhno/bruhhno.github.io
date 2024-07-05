@@ -1,0 +1,197 @@
+@font-face {
+    font-family: "GT America Medium";
+    src: url("fonts/GT-America-Medium.eot");
+    src: url("fonts/GT-America-Medium.eot?#iefix") format("embedded-opentype"),
+        url("fonts/GT-America-Medium.woff2") format("woff2"),
+        url("fonts/GT-America-Medium.woff") format("woff"),
+        url("fonts/GT-America-Medium.ttf") format("truetype"),
+        url("fonts/GT-America-Medium.svg#GT America Medium") format("svg");
+}
+
+@font-face {
+    font-family: "GT America Regular";
+    src: url("fonts/GT-America-Regular.eot");
+    src: url("fonts/GT-America-Regular.eot?#iefix") format("embedded-opentype"),
+        url("fonts/GT-America-Regular.woff2") format("woff2"),
+        url("fonts/GT-America-Regular.woff") format("woff"),
+        url("fonts/GT-America-Regular.ttf") format("truetype"),
+        url("fonts/GT-America-Regular.svg#GT America Regular") format("svg");
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: black;
+    font-family: GT America Medium;
+    font-size: 11pt;
+    color: aliceblue;
+}
+
+@media only screen and (max-width: 600px) {
+    body,
+    html {
+        font-size: 9.7pt;
+    }
+}
+.heading {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+
+}
+
+#menu {
+    position: absolute;
+    z-index: 200;
+    top: 15px;
+    right: 15px;
+    font-size: inherit;
+    overflow: visible;
+    display: block;
+    width: auto;
+    text-align: right;
+    color: inherit;
+
+}
+
+.submenu {
+    font-family: GT America Regular;
+    font-size: inherit;
+    padding-bottom: 5pt;
+    padding-top: 0pt;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+    padding-top: 10px;
+}
+
+p.text {
+    margin: 0;
+    padding: 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+
+
+[id^=toggle],
+[id^=toggle] + * {
+    display: none;
+}
+
+[id^=toggle]:checked + * {
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    padding: 0;
+    margin: 0:
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:vistes {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+label:hover {
+    cursor: pointer;
+    color: dimgrey;
+    text-decoration: underline;
+}
+
+#logo:hover {
+    background-image: repeating-linear-gradient(45deg, violet, indigo, blue, green, yellow, orange, red, violet);
+    background-size: 800% 800%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbow 3s linear infinite;
+}
+
+
+.image-gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px; /* Adjust to create space from the top */
+}
+
+.image-container {
+    margin-bottom: 20px; /* Space between images */
+    text-align: center;
+}
+
+.image-container img {
+    width: 80%;
+    max-width: 800px;
+    height: auto;
+}
+
+.image-container video {
+    width: 80%;
+    max-width: 800px;
+    height: auto;
+}
+
+.image-container .title {
+    margin-top: 10px;
+    font-family: GT America Regular;
+    font-size: 10;}
+
+
+#underline {
+    text-decoration: none;
+}
+
+#underline:hover {
+    text-decoration: underline;
+    color: inherit;
+}
+
+#rainbow {
+    text-decoration: inherit;
+}
+
+#rainbow:hover {
+    text-decoration: underline;
+    background-image: repeating-linear-gradient(45deg, violet, indigo, blue, green, yellow, orange, red, violet);
+    background-size: 800% 800%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbow 3s linear infinite;
+
+}
+
+#rainbow:checked {
+    background-image: repeating-linear-gradient(45deg, violet, indigo, blue, green, yellow, orange, red, violet);
+    background-size: 800% 800%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbow 3s linear infinite;
+}
+
+@keyframes rainbow {
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 0%
+    }
+
+    100% {

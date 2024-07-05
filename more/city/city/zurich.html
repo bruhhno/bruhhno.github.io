@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yelp</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="../icon/favicon.svg">
+</head>
+
+<body>
+    <div class="menu">
+        <div class="left-menu">
+            <a href="../index.html"><img src="../icon/home.svg" class="menuicon"></a>
+        </div>
+        <div id="current-page-title" class="current-page-title"></div>
+        <div class="middle-menu">
+            <a id="antwerp" href="antwerp.html">Antwerp</a>
+            <a id="berlin" href="berlin.html">Berlin</a>
+            <a id="la" href="la.html">Los Angeles</a>
+            <a id="london" href="london.html">London</a>
+            <a id="ny" href="ny.html">New York</a>
+            <a id="paris" href="paris.html">Paris</a>
+            <a id="venice" href="venice.html">Venice</a>
+            <a id="vienna" href="vienna.html">Vienna</a>
+            <a id="zurich" href="zurich.html">Zurich</a>
+        </div>
+        <div class="right-menu">
+            Favorite: <img src="../icon/star.svg" class="menuicon">
+        </div>
+        <div class="mobile-menu-button" onclick="toggleMenu()">
+            <img src="../icon/menu.svg" class="mobile-menu-icon">
+        </div>
+    </div>
+    <div class="dropdown-menu" id="dropdown-menu">
+        <a href="antwerp.html">Antwerp</a>
+        <a href="berlin.html">Berlin</a>
+        <a href="la.html">Los Angeles</a>
+        <a href="london.html">London</a>
+        <a href="ny.html">New York</a>
+        <a href="paris.html">Paris</a>
+        <a href="venice.html">Venice</a>
+        <a href="vienna.html">Vienna</a>
+        <a href="zurich.html">Zurich</a>
+        <a href="#">Favorite: <img src="../icon/star.svg" class="menuicon"></a>
+    </div>
+
+    <div class="text">
+
+
+        <h2>Art</h2>
+        <br>
+        <p> <a target="_blank" href="https://www.google.com/search?q=helmhaus">Helmhaus</a></p>
+        <p> <a target="_blank" href="https://www.google.com/search?q=kunsthalle+zurich">Kunsthalle Z&uuml;rich</a></p>
+        <p> <a target="_blank" href="https://www.google.com/search?q=kunsthaus+zurich">Kunsthaus Z&uuml;rich</a></p>
+        <p> <a target="_blank" href="https://www.google.com/search?q=corbusier+house+zurich">Le Corbusier House</a></p>
+        <p> <a target="_blank" href="https://www.google.com/search?q=migros+museum"><img src="../icon/star.svg" class="star">Migros Museum f&uuml;r Gegenwartskunst</a></p>
+        <p> <a target="_blank" href="https://www.google.com/search?q=museum+fur+gestaltung+zurich">Museum f&uuml;r Gestaltung Z&uuml;rich</a></p>
+        <p> <a target="_blank" href="https://www.google.com/search?q=haus+konstruktive"><img src="../icon/star.svg" class="star">Museum Haus Konstruktiv</a></p>
+        <br><br>
+        <h2>Food</h2>
+        <br>
+        <p> <a target="_blank" href="https://www.google.com/search?q=india+street+food+zurich">India Street Food</a></p>
+        <p> <a target="_blank" href="https://www.google.com/search?q=juicery+21+zurich">Juicery 21</a></p>
+        <p> <a target="_blank" href="https://www.google.com/search?q=Kronenhalle+zurich">Kronenhalle</a></p>
+
+        <br><br>
+        <h2>Other</h2>
+        <br>
+        <p> <a target="_blank" href="https://www.google.com/search?q=botanical+garden+zurich">Botanical Garden</a></p>
+        <p> <a target="_blank" href="https://www.google.com/search?q=flussbad+oberer+letten"><img src="../icon/star.svg" class="star">Flussbad Oberer Letten</a></p>
+        <p> <a target="_blank" href="https://www.google.com/search?q=flussbad+unterer+letten"><img src="../icon/star.svg" class="star">Flussbad Unterer Letten</a></p>
+        <p> <a target="_blank" href="https://www.google.com/search?q=hallenbad+city+zurich">Hallenbad City</a></p>
+        <br><br>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById('dropdown-menu');
+            if (menu.style.display === 'flex') {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'flex';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var path = window.location.pathname;
+            var page = path.split("/").pop();
+
+            var menuItems = {
+                'antwerp.html': 'antwerp',
+                'berlin.html': 'berlin',
+                'la.html': 'la',
+                'london.html': 'london',
+                'ny.html': 'ny',
+                'paris.html': 'paris',
+                'venice.html': 'venice',
+                'vienna.html': 'vienna',
+                'zurich.html': 'zurich'
+            };
+
+            var activeMenuItemId = menuItems[page];
+            if (activeMenuItemId) {
+                var activeMenuItem = document.getElementById(activeMenuItemId);
+                if (activeMenuItem) {
+                    activeMenuItem.classList.add('active');
+                    document.getElementById('current-page-title').textContent = activeMenuItem.textContent;
+                }
+            }
+        });
+
+    </script>
+    <script src="../script/time.js" defer></script>
+</body>
+
+</html>

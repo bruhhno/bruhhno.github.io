@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yelp</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="../icon/favicon.svg">
+</head>
+
+<body>
+    <div class="menu">
+        <div class="left-menu">
+            <a href="../index.html"><img src="../icon/home.svg" class="menuicon"></a>
+        </div>
+        <div id="current-page-title" class="current-page-title"></div>
+        <div class="middle-menu">
+            <a id="antwerp" href="antwerp.html">Antwerp</a>
+            <a id="berlin" href="berlin.html">Berlin</a>
+            <a id="la" href="la.html">Los Angeles</a>
+            <a id="london" href="london.html">London</a>
+            <a id="ny" href="ny.html">New York</a>
+            <a id="paris" href="paris.html">Paris</a>
+            <a id="venice" href="venice.html">Venice</a>
+            <a id="vienna" href="vienna.html">Vienna</a>
+            <a id="zurich" href="zurich.html">Zurich</a>
+        </div>
+        <div class="right-menu">
+            Favorite: <img src="../icon/star.svg" class="menuicon">
+        </div>
+        <div class="mobile-menu-button" onclick="toggleMenu()">
+            <img src="../icon/menu.svg" class="mobile-menu-icon">
+        </div>
+    </div>
+    <div class="dropdown-menu" id="dropdown-menu">
+        <a href="antwerp.html">Antwerp</a>
+        <a href="berlin.html">Berlin</a>
+        <a href="la.html">Los Angeles</a>
+        <a href="london.html">London</a>
+        <a href="ny.html">New York</a>
+        <a href="paris.html">Paris</a>
+        <a href="venice.html">Venice</a>
+        <a href="vienna.html">Vienna</a>
+        <a href="zurich.html">Zurich</a>
+        <a href="#">Favorite: <img src="../icon/star.svg" class="menuicon"></a>
+    </div>
+
+
+    <div class="text">
+        <h2>Art</h2>
+        <br>
+        <p><a target="_blank" href="https://www.google.com/search?q=air+de+paris">Air de Paris</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=almine+rech+gallery+paris">Almine Rech Gallery</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=awi+paris">Arab World Institute</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=bourse+de+commerce"><img src="../icon/star.svg" class="star">Bourse de Commerce</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=chantal+crousel+paris">Galerie Chantal Crousel</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=david+zwirner+paris">David Zwirner</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=daniel+templon+paris">Daniel Templon</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=fondation+pernod+ricard">Fondation Pernod Ricard</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=gagosian+paris">Gagosian</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=grand+palais">Grand Palais</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=jeu+de+paume">Jeu de Paume</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=kamel+mennour">Kamel Mennour</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=kartsen+greve+paris">Karsten Greve Gallery</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=lafayette+anticipation"><img src="../icon/star.svg" class="star">Lafayette Anticipations</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=louvre">Louvre</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=maison+europ%C3%A9enne+de+la+photographie"><img src="../icon/star.svg" class="star">MEP</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=Musée+de+l'Art+Moderne+paris">Musée de l'Art Moderne</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=musee+d'orsay">Musée d'Orsay</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=musee+picasso+paris">Musée Picasso</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=musee+rodin">Musée Rodin</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=palais+de+tokyo">Palais de Tokyo</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=pompidou+paris">The Centre Pompidou</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=perrotin+paris">PERROTIN PARIS</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=thaddaeus+ropac">Thaddaeus Ropac</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=thomas+dane+paris">Thomas Dane</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=white+cube+paris">White Cube</a></p>
+
+        <br><br>
+
+        <h2>Bars</h2>
+        <br>
+        <p><a target="_blank" href="https://www.google.com/search?q=aux+deux+amis">Aux Deux Amis&nbsp;</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=Harry's+New+York+Bar"><img src="../icon/star.svg" class="star">Harry's New York Bar</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=cafe+la+perle">La Perle</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=le+clown+bar">Le Clown Bar</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=Le+Baron+Rouge"><img src="../icon/star.svg" class="star">Le Baron Rouge</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=Aux+Folies">Aux Folies</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=Chez+Prune">Chez Prune</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=Le+Reilhac">Le Reilhac</a></p>
+        <br><br>
+
+        <h2>Boulangeries/ Cafés</h2>
+        <br>
+        <p><a target="_blank" href="https://www.google.com/search?q=ble+sucre+paris">Ble Sucre&nbsp;</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=bo+et+mie+paris">BO&MIE</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=poilane+paris">Boulangerie Poil&acirc;ne&nbsp;</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=du+pain+et+des+idees+paris">Du Pain et des Id&eacute;es&nbsp;</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=landemaine+beaumarchais+paris">MAISON LANDEMAINE BEAUMARCHAIS&nbsp;</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=ten+belles+bread"><img src="../icon/star.svg" class="star">Ten Belles Bread</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=Solques+Bruno">Solques Bruno</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=I.O+Café">I.O Café</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=Rose+Bakery+Maison+Balzac">Rose Bakery Maison Balzac</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=Milligramme"><img src="../icon/star.svg" class="star">Milligramme</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=DEMAIN">DEMAIN</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=Pépite+boulangerie"><img src="../icon/star.svg" class="star">Pépite boulangerie</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=Xing+Fu+Tang"><img src="../icon/star.svg" class="star">Xing Fu Tang</a></p>
+        <br><br>
+        <h2>Food</h2>
+        <br>
+        <p><a target="_blank" href="https://www.google.com/search?q=Anatolia+Village+Paris">Anatolia Village</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=Au+Bon+Coin+Rue+des+Cloys+Paris">Au Bon Coin</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=Aux+Mandarins+de+Belleville"><img src="../icon/star.svg" class="star"><img src="../icon/star.svg" class="star">Aux Mandarins de Belleville</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=ave+maria+paris">Ave Maria</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=Bar+à+momos">Bar à momos</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=Best+Tofu+Paris">Best Tofu</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=big+love+paris">BigLove</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=bistrot+mee">BISTROT MEE</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=bistrot+paul+bert">Bistrot Paul Bert</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=Bob+De+Tunis">Bob De Tunis</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=Bob%27s+Bake+Shop"><img src="../icon/star.svg" class="star"><img src="../icon/star.svg" class="star">Bob's Bake Shop</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=Baby+Love+Burger">Baby Love Burger</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=Bofinger"><img src="../icon/star.svg" class="star">Bofinger</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=Benchy"><img src="../icon/star.svg" class="star">Benchy</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=bouillon+julien+paris">Bouillon-Julien</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=candelaria+paris">Candelaria</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=Chamroeun+Crimée"><img src="../icon/star.svg" class="star">Chamroeun Crimée</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=The+Crying+Tiger+Paris+6">The Crying Tiger Paris 6</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=chez+le+libanais">Chez le Libanais</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=Chiche+Paris">Chiche</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=clamato+paris">Clamato</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=Coin+de+Paradis">Coin de Paradis</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=D+Noodles">D Noodles</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=Dong+Huong">Dong Huong</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=Evi+Evane+St+Placide">Evi Evane</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=Enni+Udon"><img src="../icon/star.svg" class="star">Enni Udon</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=FURIA+paris">FURIA</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=Guo+Xin+Ravioli"><img src="../icon/star.svg" class="star">Guo Xin Ravioli</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=Higuma"><img src="../icon/star.svg" class="star">Higuma</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=huguette+bistro+de+la+mer">Huguette</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=Jah+Jah+By+Le+Tricycle">Jah Jah</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=Krishna+Bhavan+100+Veg">Krishna Bhavan 100 Veg</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=KUMA+-+Cadet">KUMA - Cadet</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=kunitoraya+paris">Kunitoraya</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=L%27atelier+Gusto">L'atelier Gusto</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=l'as+du+fallafel">L'as du Fallafel</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=La+Cantine+de+Babelville">La Cantine de Babelville</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=creperie+de+josselin">La Cr&ecirc;perie de Josselin</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=le+cafe+des+musees">Le Caf&eacute; des Mus&eacute;es</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=Le+Bougainville"><img src="../icon/star.svg" class="star">Le Bougainville</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=le+mary+celeste">Le Mary Celeste</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=le+servan">Le Servan</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=louie+louie+paris"><img src="../icon/star.svg" class="star">Louie Louie</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=Mangez+et+cassez-vous">Mangez et cassez-vous</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=Mian+Guan">Mian Guan</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=Mo+Sarpi">Mo Sarpi</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=Noli=Paris">Noli</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=Omusubi+Gonbei">Omusubi Gonbei</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=paris-feni">Paris-F&eacute;ni</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=Pho+tai">Pho tai</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=Song+Heng">Song Heng</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=Urfa+Durum">Urfa Durum</a></p>
+        <p><a target="_blank" href="https://www.google.com/search?q=wild+and+the+moon+paris">Wild &amp; The Moon</a></p>
+        <br><br>
+        <h2>Other</h2>
+        <br>
+        <p> <a target="_blank" href="https://www.google.com/search?q=sportif+pailleron+paris">Espace Sportif Pailleron&nbsp;</a></p>
+        <p> <a target="_blank" href="https://www.google.com/search?q=parc+belleville+paris">Parc de Belleville&nbsp;</a></p>
+        <p> <a target="_blank" href="https://www.google.com/search?q=buttes+chaumont+paris">Parc des Buttes-Chaumont </a></p>
+        <p> <a target="_blank" href="https://www.google.com/search?q=after+8+books"><img src="../icon/star.svg" class="star">After 8 Book&nbsp;</a></p>
+        <p> <a target="_blank" href="https://www.google.com/search?q=drei+paris+shop">Drei Paris&nbsp;</a></p>
+        <p> <a target="_blank" href="https://www.google.com/search?q=e.+dehillerin"><img src="../icon/star.svg" class="star">E. DEHILLERIN</a></p>
+        <br><br>
+
+    </div>
+
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById('dropdown-menu');
+            if (menu.style.display === 'flex') {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'flex';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var path = window.location.pathname;
+            var page = path.split("/").pop();
+
+            var menuItems = {
+                'antwerp.html': 'antwerp',
+                'berlin.html': 'berlin',
+                'la.html': 'la',
+                'london.html': 'london',
+                'ny.html': 'ny',
+                'paris.html': 'paris',
+                'venice.html': 'venice',
+                'vienna.html': 'vienna',
+                'zurich.html': 'zurich'
+            };
+
+            var activeMenuItemId = menuItems[page];
+            if (activeMenuItemId) {
+                var activeMenuItem = document.getElementById(activeMenuItemId);
+                if (activeMenuItem) {
+                    activeMenuItem.classList.add('active');
+                    document.getElementById('current-page-title').textContent = activeMenuItem.textContent;
+                }
+            }
+        });
+
+    </script>
+    <script src="../script/time.js" defer></script>
+</body>
+
+</html>
