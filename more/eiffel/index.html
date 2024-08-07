@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distance and Direction to Eiffel Tower</title>
+    <style>
+        body {
+            margin: 15px;
+            font-family: helvetica;
+            font-size: 10pt;
+            color: whitesmoke;
+            background-color: black;
+        }
+
+        .infobox {
+            position: relative;
+            margin-bottom: 10px;
+            width: 300px;
+            height: auto;
+            padding: 5px;
+            border-color: whitesmoke;
+            border-style: solid;
+            border-width: 2px;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            border-color: whitesmoke;
+            border: 10px;
+        }
+
+        h1 {
+            padding: 0;
+            margin: 0;
+            font-size: 12pt;
+            font-family: inherit
+        }
+
+        p {
+            padding: 0;
+            margin: 0;
+        }
+
+        #info {
+            margin-bottom: 20px;
+        }
+
+        #info p {
+            margin: 10px 0;
+            font-size: 1.2em;
+        }
+
+        #compass {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+        }
+
+        #compassImage {
+            width: 100%;
+            height: auto;
+            transform-origin: 50% 50%;
+            transition: transform 0.5s ease-out;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="infobox">
+        <h1>Distance to the Eiffel Tower</h1>
+        <p id="distance">Distance: Calculating...</p>
+        <p id="parisTime">Time in Paris: Calculating...</p>
+        <p id="bearing">Compass degree: Calculating...</p>
+    </div>
+    <div class="infobox">
+        <p id="walk">How long to walk: Calculating...</p>
+        <p id="drive">How long to drive: Calculating...</p>
+        <p id="fly">How long to fly: Calculating...</p>
+        <p id="bike">How long by bike: Calculating...</p>
+        <p id="boat">How long by boat: Calculating...</p>
+    </div>
+    <div class="container">
+        <div id="compass">
+            <img src="compass.png" alt="Compass" id="compassImage">
+        </div>
+    </div>
+
+    <script>
+        const eiffelTowerCoords = { lat: 48.8584, lng: 2.2945 };
+        const travelSpeeds = {
+            walk: 5, // km/h
+            drive: 50, // km/h
+            fly: 800, // km/h
+            bike: 15, // km/h
+            boat: 30 // km/h
+        };
+
+        function toRadians(degrees) {
+            return degrees * (Math.PI / 180);
+        }
+
+        function toDegrees(radians) {
+            return radians * (180 / Math.PI);
+        }
+
+        function calculateDistance(lat1, lon1, lat2, lon2) {
+            const R = 6371; // Radius of the Earth in km
+            const dLat = toRadians(lat2 - lat1);
+            const dLon = toRadians(lon2 - lon1);
+            const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                Math.cos(toRadians(lat1)) * Math.cos(toRadians(lat2)) *
+                Math.sin(dLon / 2) * Math.sin(dLon / 2);
+            const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+            return R * c;
+        }
+
+        function calculateBearing(lat1, lon1, lat2, lon2) {
+            const dLon = toRadians(lon2 - lon1);
+            const y = Math.sin(dLon) * Math.cos(toRadians(lat2));
+            const x = Math.cos(toRadians(lat1)) * Math.sin(toRadians(lat2)) -
+                Math.sin(toRadians(lat1)) * Math.cos(toRadians(lat2)) * Math.cos(dLon);
+            let brng = toDegrees(Math.atan2(y, x));
+            brng = (brng + 360) % 360; // Normalize to 0-360
+            return brng;
+        }
+
+        function calculateTravelTimes(distance) {
+            return {
+                walk: distance / travelSpeeds.walk,
+                drive: distance / travelSpeeds.drive,
+                fly: distance / travelSpeeds.fly,
+                bike: distance / travelSpeeds.bike,
+                boat: distance / travelSpeeds.boat
+            };
+        }
+
+        function updateInfo(position) {
+            const userCoords = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+            };
+            const distance = calculateDistance(userCoords.lat, userCoords.lng, eiffelTowerCoords.lat, eiffelTowerCoords.lng);
+            const bearing = calculateBearing(userCoords.lat, userCoords.lng, eiffelTowerCoords.lat, eiffelTowerCoords.lng);
+            const travelTimes = calculateTravelTimes(distance);
+
+            document.getElementById('distance').textContent = `Distance: ${distance.toFixed(2)} km`;
+            document.getElementById('bearing').textContent = `Compass degree: ${bearing.toFixed(2)}°`;
+            document.getElementById('walk').textContent = `How long to walk: ${travelTimes.walk.toFixed(2)} hours`;
+            document.getElementById('drive').textContent = `How long to drive: ${travelTimes.drive.toFixed(2)} hours`;
+            document.getElementById('fly').textContent = `How long to fly: ${travelTimes.fly.toFixed(2)} hours`;
+            document.getElementById('bike').textContent = `How long by bike: ${travelTimes.bike.toFixed(2)} hours`;
+            document.getElementById('boat').textContent = `How long by boat: ${travelTimes.boat.toFixed(2)} hours`;
+
+            updateCompassHeading(bearing);
+        }
+
+        function handleError(error) {
+            console.error('Geolocation error:', error);
+            document.getElementById('distance').textContent = 'Unable to determine location';
+            document.getElementById('bearing').textContent = 'Unable to determine direction';
+        }
+
+        function updateCompassHeading(bearing) {
+            const compassImage = document.getElementById('compassImage');
+            compassImage.style.transform = `rotate(${-bearing}deg)`; // Invert rotation for correct orientation
+        }
+
+        function updateParisTime() {
+            const now = new Date();
+            const parisTime = now.toLocaleTimeString('en-GB', { timeZone: 'Europe/Paris', hour: '2-digit', minute: '2-digit' });
+            document.getElementById('parisTime').textContent = `Time in Paris: ${parisTime}`;
+        }
+
+        if ('DeviceOrientationEvent' in window) {
+            window.addEventListener('deviceorientation', function(event) {
+                let heading = null;
+                if (event.webkitCompassHeading !== undefined && event.webkitCompassHeading !== null) {
+                    heading = event.webkitCompassHeading;
+                } else if (event.alpha !== null && event.alpha !== undefined) {
+                    heading = event.alpha;
+                }
+                if (heading !== null) {
+                    updateCompassHeading(heading);
+                }
+            });
+        } else {
+            console.error('Device orientation not supported');
+        }
+
+        if ('geolocation' in navigator) {
+            navigator.geolocation.watchPosition(updateInfo, handleError, {
+                enableHighAccuracy: true,
+                maximumAge: 10000,
+                timeout: 5000
+            });
+        } else {
+            handleError({ message: 'Geolocation not supported' });
+        }
+
+        updateParisTime();
+        setInterval(updateParisTime, 60000); // Update Paris time every minute
+    </script>
+</body>
+
+</html>
