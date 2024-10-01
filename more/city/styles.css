@@ -40,7 +40,13 @@ body {
     padding: 5px;
     padding-top: 10px;
     padding-bottom: 10px;
-    font-size: 18pt;
+
+}
+
+@media screen and (max-width: 768px) {
+    .menu {
+        font-size: 18pt;
+    }
 }
 
 .menu a {
@@ -124,6 +130,7 @@ body {
         width: 24px;
         height: auto;
         padding-right: 2px;
+
     }
 }
 
@@ -209,7 +216,7 @@ p {
 
 @media screen and (max-width: 600px) {
     p {
-            font-size: 28px;
+        font-size: 28px;
         line-height: 20pt;
         border-radius: 3px;
         padding: 0.5px;
