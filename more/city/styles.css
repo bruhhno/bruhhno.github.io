@@ -3,9 +3,9 @@
     font-family: 'Marista-Italic';
     src: url('font/Marista-Italic.eot');
     src: url('font/Marista-Italic.eot?#iefix') format('embedded-opentype'),
-         url('font/Marista-Italic.woff') format('woff'),
-         url('font/Marista-Italic.ttf') format('truetype'),
-         url('font/Marista-Italic.svg#svgFontName') format('svg');
+        url('font/Marista-Italic.woff') format('woff'),
+        url('font/Marista-Italic.ttf') format('truetype'),
+        url('font/Marista-Italic.svg#svgFontName') format('svg');
 }
 
 /* Body and General Styles */
@@ -19,7 +19,7 @@ body {
 
 /* Landing Page Styles */
 .landingpage {
-    height: 100vh; 
+    height: 100vh;
     margin-top: 33vh;
     text-align: center;
     font-family: 'Marista-Italic';
@@ -27,7 +27,7 @@ body {
     font-weight: bold;
     line-height: 28pt;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
 }
 
 /* Menu Styles */
@@ -40,6 +40,7 @@ body {
     padding: 5px;
     padding-top: 10px;
     padding-bottom: 10px;
+    font-size: 18pt;
 }
 
 .menu a {
@@ -66,9 +67,9 @@ body {
 }
 
 .mobile-menu-icon {
-    width: 24px; 
-    height: auto; 
-    cursor: pointer; 
+    width: 24px;
+    height: auto;
+    cursor: pointer;
 }
 
 .dropdown-menu {
@@ -89,6 +90,7 @@ body {
 }
 
 @media (max-width: 768px) {
+
     .middle-menu,
     .right-menu {
         display: none;
@@ -181,8 +183,11 @@ h2 {
 
 @media screen and (max-width: 600px) {
     h2 {
-        font-size: 22px;
-        line-height: 22pt;
+        font-size: 28px;
+        line-height: 20pt;
+        border-radius: 2.5px;
+        padding: 0.5px;
+        margin: 1.4px;
     }
 }
 
@@ -204,8 +209,11 @@ p {
 
 @media screen and (max-width: 600px) {
     p {
-        font-size: 22px;
+            font-size: 28px;
         line-height: 20pt;
+        border-radius: 3px;
+        padding: 0.5px;
+        margin: 1.4px;
     }
 }
 
